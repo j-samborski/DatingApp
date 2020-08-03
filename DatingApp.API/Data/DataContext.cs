@@ -9,6 +9,7 @@ namespace DatingApp.API.Data
         public DataContext(DbContextOptions<DataContext> options) : base (options){} //konstruktor
 
         public DbSet<Value> Values { get; set; } //tabela
+        public DbSet<User> Users { get; set; }
 
     }
 }
