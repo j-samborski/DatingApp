@@ -48,6 +48,8 @@ namespace DatingApp.API.Controllers
         [HttpPost("login")]
         public async Task<IActionResult> Login(UserForLoginDto userForLoginDto)
         {
+
+            throw new Exception("Sraka siusiaka");
             // if (!await _repo.UserExists(userForLoginDto.Username)){
             //     return Unauthorized();
             // }
@@ -78,10 +80,10 @@ namespace DatingApp.API.Controllers
 
             var tokenHandler = new JwtSecurityTokenHandler();
             var token = tokenHandler.CreateToken(tokenDescriptor);
-            return Ok(new{
+            return Ok(new
+            {
                 token = tokenHandler.WriteToken(token)
             });
         }
     }
-
 }
